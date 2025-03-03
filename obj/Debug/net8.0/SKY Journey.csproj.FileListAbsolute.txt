@@ -1,0 +1,30 @@
+D:\SKY Journey\bin\Debug\net8.0\appsettings.Development.json
+D:\SKY Journey\bin\Debug\net8.0\appsettings.json
+D:\SKY Journey\bin\Debug\net8.0\SKY Journey.staticwebassets.runtime.json
+D:\SKY Journey\bin\Debug\net8.0\SKY Journey.exe
+D:\SKY Journey\bin\Debug\net8.0\SKY Journey.deps.json
+D:\SKY Journey\bin\Debug\net8.0\SKY Journey.runtimeconfig.json
+D:\SKY Journey\bin\Debug\net8.0\SKY Journey.dll
+D:\SKY Journey\bin\Debug\net8.0\SKY Journey.pdb
+D:\SKY Journey\obj\Debug\net8.0\SKY Journey.GeneratedMSBuildEditorConfig.editorconfig
+D:\SKY Journey\obj\Debug\net8.0\SKY Journey.AssemblyInfoInputs.cache
+D:\SKY Journey\obj\Debug\net8.0\SKY Journey.AssemblyInfo.cs
+D:\SKY Journey\obj\Debug\net8.0\SKY Journey.csproj.CoreCompileInputs.cache
+D:\SKY Journey\obj\Debug\net8.0\SKY Journey.MvcApplicationPartsAssemblyInfo.cache
+D:\SKY Journey\obj\Debug\net8.0\SKY Journey.RazorAssemblyInfo.cache
+D:\SKY Journey\obj\Debug\net8.0\SKY Journey.RazorAssemblyInfo.cs
+D:\SKY Journey\obj\Debug\net8.0\staticwebassets.build.json
+D:\SKY Journey\obj\Debug\net8.0\staticwebassets.development.json
+D:\SKY Journey\obj\Debug\net8.0\staticwebassets\msbuild.SKY Journey.Microsoft.AspNetCore.StaticWebAssets.props
+D:\SKY Journey\obj\Debug\net8.0\staticwebassets\msbuild.build.SKY Journey.props
+D:\SKY Journey\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.SKY Journey.props
+D:\SKY Journey\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.SKY Journey.props
+D:\SKY Journey\obj\Debug\net8.0\staticwebassets.pack.json
+D:\SKY Journey\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\SKY Journey\obj\Debug\net8.0\scopedcss\bundle\SKY Journey.styles.css
+D:\SKY Journey\obj\Debug\net8.0\scopedcss\projectbundle\SKY Journey.bundle.scp.css
+D:\SKY Journey\obj\Debug\net8.0\SKY Journey.dll
+D:\SKY Journey\obj\Debug\net8.0\refint\SKY Journey.dll
+D:\SKY Journey\obj\Debug\net8.0\SKY Journey.pdb
+D:\SKY Journey\obj\Debug\net8.0\SKY Journey.genruntimeconfig.cache
+D:\SKY Journey\obj\Debug\net8.0\ref\SKY Journey.dll

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "SKY Journey/1.0.0": {
+        "runtime": {
+          "SKY Journey.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SKY Journey/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
