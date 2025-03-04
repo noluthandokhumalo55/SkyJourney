@@ -2,17 +2,63 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center" style="position: relative;">
+<div class="text-center" style="position: relative;
+    background-image: url('/images/blue-cloud-clouds-cloudy-389642.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 70vh;">
 
-    <!-- Login Button -->
-    <a href="/Account/Login"
-       style="position: absolute; top: 20px; right: 20px; background-color: pink; color: white; padding: 10px 20px;
-              text-decoration: none; border: 2px solid white; border-radius: 4px; font-weight: bold;">
-        Login
-    </a>
-
-    <!-- Background Image -->
-    <img src="~/images/clouds.jpg" alt="Clouds"
-         style="width: 100%; height: 50vh; object-fit: cover; border-radius: 0;" />
-
+    <!-- Tabs Block with White Background -->
+    <div class="container bg-white p-4 rounded shadow" style="position: absolute; top: 20%; left: 50%; transform: translateX(-50%); width: 80%; max-width: 600px;">
+        <!-- Nav Tabs -->
+        <ul class="nav nav-pills justify-content-center" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="flight-tab" data-bs-toggle="pill" href="#flight" role="tab" aria-controls="flight" aria-selected="true">Flight</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="booking-tab" data-bs-toggle="pill" href="#booking" role="tab" aria-controls="booking" aria-selected="false">Booking</a>
+            </li>
+        </ul>
+        <!-- Tab Content -->
+        <div class="tab-content mt-3" id="myTabContent">
+            <!-- Flight Tab -->
+            <div class="tab-pane fade show active" id="flight" role="tabpanel" aria-labelledby="flight-tab">
+                <p>Flight information will go here.</p>
+            </div>
+            <!-- Booking Tab -->
+            <div class="tab-pane fade" id="booking" role="tabpanel" aria-labelledby="booking-tab">
+                <p>Booking information will go here.</p>
+            </div>
+        </div>
+    </div>
 </div>
+
+<!-- Three Darker Blue Containers Below -->
+<div class="container mt-5">
+    <div class="row">
+        <!-- First Container -->
+        <div class="col-md-4 mb-4">
+            <div class="container p-5" style="background-color: #4682B4; color: white; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); height: 200px;">
+                <h4>Container 1</h4>
+                <p>Content for the first container.</p>
+            </div>
+        </div>
+        <!-- Second Container -->
+        <div class="col-md-4 mb-4">
+            <div class="container p-5" style="background-color: #4682B4; color: white; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); height: 200px;">
+                <h4>Container 2</h4>
+                <p>Content for the second container.</p>
+            </div>
+        </div>
+        <!-- Third Container -->
+        <div class="col-md-4 mb-4">
+            <div class="container p-5" style="background-color: #4682B4; color: white; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); height: 200px;">
+                <h4>Container 3</h4>
+                <p>Content for the third container.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS (ensure this is included) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

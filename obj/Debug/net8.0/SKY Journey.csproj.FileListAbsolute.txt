@@ -28,3 +28,34 @@ D:\SKY Journey\obj\Debug\net8.0\refint\SKY Journey.dll
 D:\SKY Journey\obj\Debug\net8.0\SKY Journey.pdb
 D:\SKY Journey\obj\Debug\net8.0\SKY Journey.genruntimeconfig.cache
 D:\SKY Journey\obj\Debug\net8.0\ref\SKY Journey.dll
+D:\SkyJourney\bin\Debug\net8.0\appsettings.Development.json
+D:\SkyJourney\bin\Debug\net8.0\appsettings.json
+D:\SkyJourney\bin\Debug\net8.0\SKY Journey.staticwebassets.runtime.json
+D:\SkyJourney\bin\Debug\net8.0\SKY Journey.exe
+D:\SkyJourney\bin\Debug\net8.0\SKY Journey.deps.json
+D:\SkyJourney\bin\Debug\net8.0\SKY Journey.runtimeconfig.json
+D:\SkyJourney\bin\Debug\net8.0\SKY Journey.dll
+D:\SkyJourney\bin\Debug\net8.0\SKY Journey.pdb
+D:\SkyJourney\obj\Debug\net8.0\SKY Journey.GeneratedMSBuildEditorConfig.editorconfig
+D:\SkyJourney\obj\Debug\net8.0\SKY Journey.AssemblyInfoInputs.cache
+D:\SkyJourney\obj\Debug\net8.0\SKY Journey.AssemblyInfo.cs
+D:\SkyJourney\obj\Debug\net8.0\SKY Journey.csproj.CoreCompileInputs.cache
+D:\SkyJourney\obj\Debug\net8.0\SKY Journey.MvcApplicationPartsAssemblyInfo.cache
+D:\SkyJourney\obj\Debug\net8.0\SKY Journey.RazorAssemblyInfo.cache
+D:\SkyJourney\obj\Debug\net8.0\SKY Journey.RazorAssemblyInfo.cs
+D:\SkyJourney\obj\Debug\net8.0\SKY Journey.sourcelink.json
+D:\SkyJourney\obj\Debug\net8.0\staticwebassets.build.json
+D:\SkyJourney\obj\Debug\net8.0\staticwebassets.development.json
+D:\SkyJourney\obj\Debug\net8.0\staticwebassets\msbuild.SKY Journey.Microsoft.AspNetCore.StaticWebAssets.props
+D:\SkyJourney\obj\Debug\net8.0\staticwebassets\msbuild.build.SKY Journey.props
+D:\SkyJourney\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.SKY Journey.props
+D:\SkyJourney\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.SKY Journey.props
+D:\SkyJourney\obj\Debug\net8.0\staticwebassets.pack.json
+D:\SkyJourney\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\SkyJourney\obj\Debug\net8.0\scopedcss\bundle\SKY Journey.styles.css
+D:\SkyJourney\obj\Debug\net8.0\scopedcss\projectbundle\SKY Journey.bundle.scp.css
+D:\SkyJourney\obj\Debug\net8.0\SKY Journey.dll
+D:\SkyJourney\obj\Debug\net8.0\refint\SKY Journey.dll
+D:\SkyJourney\obj\Debug\net8.0\SKY Journey.pdb
+D:\SkyJourney\obj\Debug\net8.0\SKY Journey.genruntimeconfig.cache
+D:\SkyJourney\obj\Debug\net8.0\ref\SKY Journey.dll

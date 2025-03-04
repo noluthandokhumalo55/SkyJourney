@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\SKY Journey\\SKY Journey.csproj": {}
+    "D:\\SkyJourney\\SKY Journey.csproj": {}
   },
   "projects": {
-    "D:\\SKY Journey\\SKY Journey.csproj": {
+    "D:\\SkyJourney\\SKY Journey.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SKY Journey\\SKY Journey.csproj",
+        "projectUniqueName": "D:\\SkyJourney\\SKY Journey.csproj",
         "projectName": "SKY Journey",
-        "projectPath": "D:\\SKY Journey\\SKY Journey.csproj",
+        "projectPath": "D:\\SkyJourney\\SKY Journey.csproj",
         "packagesPath": "C:\\Users\\lucia\\.nuget\\packages\\",
-        "outputPath": "D:\\SKY Journey\\obj\\",
+        "outputPath": "D:\\SkyJourney\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
