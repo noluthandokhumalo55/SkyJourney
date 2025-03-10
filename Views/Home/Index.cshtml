@@ -16,22 +16,278 @@
                 <a class="nav-link active" id="flight-tab" data-bs-toggle="pill" href="#flight" role="tab" aria-controls="flight" aria-selected="true">Flight</a>
             </li>
             <li class="nav-item" role="presentation">
-                <a class="nav-link" id="booking-tab" data-bs-toggle="pill" href="#booking" role="tab" aria-controls="booking" aria-selected="false">Booking</a>
+                <a class="nav-link" id="booking-tab" data-bs-toggle="pill" href="#booking" role="tab" aria-controls="booking" aria-selected="false"> My Booking</a>
             </li>
         </ul>
         <!-- Tab Content -->
         <div class="tab-content mt-3" id="myTabContent">
             <!-- Flight Tab -->
             <div class="tab-pane fade show active" id="flight" role="tabpanel" aria-labelledby="flight-tab">
-                <p>Flight information will go here.</p>
+               
+                <!-- Flight Type Dropdown -->
+                <div class="form-group">
+                    <label for="flight-type">Flight Type</label>
+                    <select class="form-control" id="flight-type">
+                        <option value="return">Return</option>
+                        <option value="one-way">One way</option>
+                    </select>
+                </div>
+
+                <!-- Date Selection -->
+                <div class="form-group">
+                    <label for="departure-date">Departure Date</label>
+                    <input type="date" class="form-control" id="departure-date">
+                </div>
+
+                <!-- Return Date Selection (Always Visible) -->
+                <div class="form-group">
+                    <label for="return-date">Return Date</label>
+                    <input type="date" class="form-control" id="return-date">
+                </div>
+
+                <!-- Departure Airport Dropdown -->
+                <div class="form-group">
+                    <label for="departure-airport">
+                        <i class="fas fa-plane-departure"></i> Departure Airport
+                    </label>
+                    <select class="form-control" id="departure-airport"></select>
+                </div>
+
+                <!-- Arrival Airport Dropdown -->
+                <div class="form-group">
+                    <label for="arrival-airport">
+                        <i class="fas fa-plane-arrival"></i> Arrival Airport
+                    </label>
+                    <select class="form-control" id="arrival-airport"></select>
+                </div>
+
+                <!-- Adult, Children, and Infant Dropdowns -->
+                <div class="form-group row">
+                    <!-- Adult Dropdown -->
+                    <div class="col-md-4">
+                        <label for="adult">Adult</label>
+                        <select class="form-control" id="adult">
+                            <!-- Options from 1 to 15 -->
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                        </select>
+                    </div>
+
+                    <!-- Children Dropdown -->
+                    <div class="col-md-4">
+                        <label for="children">Children</label>
+                        <select class="form-control" id="children">
+                            <!-- Options from 1 to 8 -->
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                        </select>
+                    </div>
+
+                    <!-- Infant Dropdown -->
+                    <div class="col-md-4">
+                        <label for="infant">Infant</label>
+                        <select class="form-control" id="infant">
+                            <!-- Options from 1 to 4 -->
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Let's Go Button -->
+                <div class="form-group text-center mt-4">
+                    <button class="btn btn-lg" style="background-color: #4682B4; color: white; font-size: 19px; font-weight: bold; padding: 15px 30px; border: none; border-radius: 6px;">
+                        Let's Go
+                    </button>
+                </div>
+
+                <script>
+                    // List of FlySafair destinations
+                    const flySafairDestinations = [
+                        { code: 'CPT', name: 'Cape Town International Airport' },
+                        { code: 'DUR', name: 'King Shaka International Airport (Durban)' },
+                        { code: 'ELS', name: 'King Phalo Airport (East London)' },
+                        { code: 'GRJ', name: 'George Airport' },
+                        { code: 'JNB', name: 'O. R. Tambo International Airport (Johannesburg)' },
+                        { code: 'BFN', name: 'Bram Fischer International Airport (Bloemfontein)' },
+                        { code: 'MQP', name: 'Kruger Mpumalanga International Airport (Mbombela)' },
+                        { code: 'PLZ', name: 'Chief Dawid Stuurman International Airport (Gqeberha)' },
+                        { code: 'HRE', name: 'Robert Gabriel Mugabe International Airport (Harare)' },
+                        { code: 'VFA', name: 'Victoria Falls Airport' },
+                        { code: 'ZNZ', name: 'Abeid Amani Karume International Airport (Zanzibar)' },
+                        { code: 'MRU', name: 'Sir Seewoosagur Ramgoolam International Airport (Mauritius)' },
+                        { code: 'WDH', name: 'Hosea Kutako International Airport (Windhoek)' }
+                    ];
+
+                    // Populate airport dropdowns
+                    const departureAirportSelect = document.getElementById('departure-airport');
+                    const arrivalAirportSelect = document.getElementById('arrival-airport');
+
+                    flySafairDestinations.forEach(destination => {
+                        const option = document.createElement('option');
+                        option.value = destination.code;
+                        option.textContent = destination.name;
+                        departureAirportSelect.appendChild(option.cloneNode(true));
+                        arrivalAirportSelect.appendChild(option);
+                    });
+
+                    // Show/hide return date based on flight type
+                    document.getElementById('flight-type').addEventListener('change', function () {
+                        const returnDate = document.getElementById('return-date');
+                        if (this.value === 'return') {
+                            returnDate.disabled = false;
+                        } else {
+                            returnDate.disabled = true;
+                            returnDate.value = "";
+                        }
+                    });
+
+                    // Ensure return date is same as departure date initially
+                    document.getElementById('departure-date').addEventListener('change', function () {
+                        document.getElementById('return-date').value = this.value;
+                    });
+                </script>
+
+</div>
+
+<script>
+    // List of FlySafair destinations
+    const flySafairDestinations = [
+        { code: 'CPT', name: 'Cape Town International Airport' },
+        { code: 'DUR', name: 'King Shaka International Airport (Durban)' },
+        { code: 'ELS', name: 'King Phalo Airport (East London)' },
+        { code: 'GRJ', name: 'George Airport' },
+        { code: 'JNB', name: 'O. R. Tambo International Airport (Johannesburg)' },
+        { code: 'BFN', name: 'Bram Fischer International Airport (Bloemfontein)' },
+        { code: 'MQP', name: 'Kruger Mpumalanga International Airport (Mbombela)' },
+        { code: 'PLZ', name: 'Chief Dawid Stuurman International Airport (Gqeberha)' },
+        { code: 'HRE', name: 'Robert Gabriel Mugabe International Airport (Harare)' },
+        { code: 'VFA', name: 'Victoria Falls Airport' },
+        { code: 'ZNZ', name: 'Abeid Amani Karume International Airport (Zanzibar)' },
+        { code: 'MRU', name: 'Sir Seewoosagur Ramgoolam International Airport (Mauritius)' },
+        { code: 'WDH', name: 'Hosea Kutako International Airport (Windhoek)' }
+    ];
+
+    // Populate airport dropdowns
+    const departureAirportSelect = document.getElementById('departure-airport');
+    const arrivalAirportSelect = document.getElementById('arrival-airport');
+
+    flySafairDestinations.forEach(destination => {
+        const option = document.createElement('option');
+        option.value = destination.code;
+        option.textContent = destination.name;
+        departureAirportSelect.appendChild(option.cloneNode(true));
+        arrivalAirportSelect.appendChild(option);
+    });
+
+    // Show/hide return date based on flight type
+    document.getElementById('flight-type').addEventListener('change', function () {
+        const returnDate = document.getElementById('return-date');
+        if (this.value === 'return') {
+            returnDate.disabled = false;
+        } else {
+            returnDate.disabled = true;
+            returnDate.value = "";
+        }
+    });
+
+    // Ensure return date is same as departure date initially
+    document.getElementById('departure-date').addEventListener('change', function () {
+        document.getElementById('return-date').value = this.value;
+    });
+</script>
+
             </div>
+
+            <script>
+                // List of FlySafair destinations
+                const flySafairDestinations = [
+                    { code: 'CPT', name: 'Cape Town International Airport' },
+                    { code: 'DUR', name: 'King Shaka International Airport (Durban)' },
+                    { code: 'ELS', name: 'King Phalo Airport (East London)' },
+                    { code: 'GRJ', name: 'George Airport' },
+                    { code: 'JNB', name: 'O. R. Tambo International Airport (Johannesburg)' },
+                    { code: 'BFN', name: 'Bram Fischer International Airport (Bloemfontein)' },
+                    { code: 'MQP', name: 'Kruger Mpumalanga International Airport (Mbombela)' },
+                    { code: 'PLZ', name: 'Chief Dawid Stuurman International Airport (Gqeberha)' },
+                    { code: 'HRE', name: 'Robert Gabriel Mugabe International Airport (Harare)' },
+                    { code: 'VFA', name: 'Victoria Falls Airport' },
+                    { code: 'ZNZ', name: 'Abeid Amani Karume International Airport (Zanzibar)' },
+                    { code: 'MRU', name: 'Sir Seewoosagur Ramgoolam International Airport (Mauritius)' },
+                    { code: 'WDH', name: 'Hosea Kutako International Airport (Windhoek)' }
+                ];
+
+                // Populate airport dropdowns
+                const departureAirportSelect = document.getElementById('departure-airport');
+                const arrivalAirportSelect = document.getElementById('arrival-airport');
+
+                flySafairDestinations.forEach(destination => {
+                    const option = document.createElement('option');
+                    option.value = destination.code;
+                    option.textContent = destination.name;
+                    departureAirportSelect.appendChild(option.cloneNode(true));
+                    arrivalAirportSelect.appendChild(option);
+                });
+
+                // Show/hide return date based on flight type
+                document.getElementById('flight-type').addEventListener('change', function () {
+                    const returnDate = document.getElementById('return-date');
+                    if (this.value === 'return') {
+                        returnDate.disabled = false;
+                    } else {
+                        returnDate.disabled = true;
+                        returnDate.value = "";
+                    }
+                });
+
+                // Ensure return date is same as departure date initially
+                document.getElementById('departure-date').addEventListener('change', function () {
+                    document.getElementById('return-date').value = this.value;
+                });
+            </script>
+
             <!-- Booking Tab -->
             <div class="tab-pane fade" id="booking" role="tabpanel" aria-labelledby="booking-tab">
-                <p>Booking information will go here.</p>
+                <div class="mb-3">
+                    <label for="flightNumber" class="form-label" style="font-weight: normal;">Flight Number</label>
+                    <input type="text" class="form-control" id="flightNumber" placeholder="Enter Flight Number">
+                </div>
+
+                <div class="mb-3">
+                    <label for="fullName" class="form-label" style="font-weight: normal;">Fullname</label>
+                    <input type="text" class="form-control" id="fullName" placeholder="Enter Full Name">
+                </div>
+
+                <button class="btn btn-primary" style="background-color: #4682B4; border-color:#4682B4;">Manage</button>
+                <button class="btn btn-primary" style="background-color:#4682B4; border-color: #4682B4;">Check in</button>
             </div>
+
         </div>
     </div>
-</div>
+
 
 <!-- Three Darker Blue Containers Below -->
 <div class="container mt-5">

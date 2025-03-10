@@ -135,7 +135,9 @@
                 </div>
 
                 <!-- Login Button - Moved Slightly Left -->
-                <a class="btn btn-outline-dark login-btn" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+                <a class="btn btn-outline-dark login-btn" href="@Url.Action("Login", "LoginRegister")">Login</a>
+
+
             </div>
         </nav>
     </header>
@@ -149,57 +151,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <!-- Tabs for Role Selection -->
-                    <ul class="nav nav-tabs" id="loginTabs" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link active" id="client-tab" data-bs-toggle="tab" href="#client" role="tab" aria-controls="client" aria-selected="true">Client Login</a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="travel-agent-tab" data-bs-toggle="tab" href="#travel-agent" role="tab" aria-controls="travel-agent" aria-selected="false">Travel Agent Login</a>
-                        </li>
-                    </ul>
-                    <div class="tab-content" id="loginTabsContent">
-                        <!-- Client Login Form -->
-                        <div class="tab-pane fade show active" id="client" role="tabpanel" aria-labelledby="client-tab">
-                            <form class="form-container">
-                                <div class="mb-3">
-                                    <label for="email" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="client-email" placeholder="Enter email" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="password" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="client-password" placeholder="Enter password" required>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <a href="#" class="text-muted">Forgot Password?</a>
-                                    <a href="#" class="text-muted">Register</a>
-                                </div>
-                                <button type="submit" class="btn btn-primary mt-3 w-100">Login</button>
-                            </form>
-                        </div>
-                        <!-- Travel Agent Login Form -->
-                        <div class="tab-pane fade" id="travel-agent" role="tabpanel" aria-labelledby="travel-agent-tab">
-                            <form class="form-container">
-                                <div class="mb-3">
-                                    <label for="email" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="travel-agent-email" placeholder="Enter email" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="pin" class="form-label">PIN</label>
-                                    <input type="password" class="form-control" id="travel-agent-pin" placeholder="Enter PIN" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="password" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="travel-agent-password" placeholder="Enter password" required>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <a href="#" class="text-muted">Forgot Password?</a>
-                                    <a href="#" class="text-muted">Register</a>
-                                </div>
-                                <button type="submit" class="btn btn-primary mt-3 w-100">Login</button>
-                            </form>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -211,12 +163,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - SKY_Journey - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-
+   
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
