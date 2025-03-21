@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using SKY_Journey.Data;
+
 namespace SKY_Journey
 {
     public class Program
@@ -8,6 +11,10 @@ namespace SKY_Journey
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            // Register the SkyJourneyDbContext with SQL Server connection string
+            builder.Services.AddDbContext<SkyJourneyDbContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             var app = builder.Build();
 

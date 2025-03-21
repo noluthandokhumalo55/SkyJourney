@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\SkyJourney\\wwwroot\\images\\backs.png",
+      "PackagePath": "staticwebassets\\images\\backs.png"
+    },
+    {
       "Id": "D:\\SkyJourney\\wwwroot\\images\\blue-cloud-clouds-cloudy-389642.jpg",
       "PackagePath": "staticwebassets\\images\\blue-cloud-clouds-cloudy-389642.jpg"
     },

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Bop3aAjSf3qwz5cGKHNc7Up2/cHdkBx7Pr9vwFeHKts=",
+  "Hash": "4U+iHqr91V+H0gW5/XpjlilrqSKkmyyesobdtjDoA4o=",
   "Source": "SKY Journey",
   "BasePath": "_content/SKY Journey",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\SkyJourney\\wwwroot\\images\\backs.png",
+      "SourceId": "SKY Journey",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\SkyJourney\\wwwroot\\",
+      "BasePath": "_content/SKY Journey",
+      "RelativePath": "images/backs.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\backs.png"
     },
     {
       "Identity": "D:\\SkyJourney\\wwwroot\\images\\blue-cloud-clouds-cloudy-389642.jpg",

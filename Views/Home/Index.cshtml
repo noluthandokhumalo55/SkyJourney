@@ -1,319 +1,163 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<!-- Include Font Awesome for icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
 <div class="text-center" style="position: relative;
-    background-image: url('/images/blue-cloud-clouds-cloudy-389642.jpg');
+    background-image: url('/images/backs.png');
     background-size: cover;
-    background-position: center;
-    height: 70vh;">
+    background-position: right;
+    height: 90vh;">
 
-    <!-- Tabs Block with White Background -->
-    <div class="container bg-white p-4 rounded shadow" style="position: absolute; top: 20%; left: 50%; transform: translateX(-50%); width: 80%; max-width: 600px;">
-        <!-- Nav Tabs -->
-        <ul class="nav nav-pills justify-content-center" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
-                <a class="nav-link active" id="flight-tab" data-bs-toggle="pill" href="#flight" role="tab" aria-controls="flight" aria-selected="true">Flight</a>
-            </li>
-            <li class="nav-item" role="presentation">
-                <a class="nav-link" id="booking-tab" data-bs-toggle="pill" href="#booking" role="tab" aria-controls="booking" aria-selected="false"> My Booking</a>
-            </li>
-        </ul>
-        <!-- Tab Content -->
-        <div class="tab-content mt-3" id="myTabContent">
-            <!-- Flight Tab -->
-            <div class="tab-pane fade show active" id="flight" role="tabpanel" aria-labelledby="flight-tab">
-               
-                <!-- Flight Type Dropdown -->
-                <div class="form-group">
-                    <label for="flight-type">Flight Type</label>
-                    <select class="form-control" id="flight-type">
-                        <option value="return">Return</option>
-                        <option value="one-way">One way</option>
-                    </select>
-                </div>
+    <!-- Main Text Overlay -->
+    <h1 style="position: absolute;
+        top: 10%;
+        left: 2%;
+        color: black; /* Text color */
+        font-size: 3rem;
+        font-weight: bold;
+        max-width: 40%;">
+        Discover & book a perfect flight today!
+    </h1>
 
-                <!-- Date Selection -->
-                <div class="form-group">
-                    <label for="departure-date">Departure Date</label>
-                    <input type="date" class="form-control" id="departure-date">
-                </div>
+    <!-- Search for Flights Text -->
+    <h2 style="position: absolute;
+        top: 50%; /* Positioned below the main heading */
+        left: 2%;
+        color: #87CEEB; /* Light blue color */
+        font-size: 3rem; /* Larger font size */
+        font-weight: bold;
+        max-width: 40%;">
+        Search for Flights
+    </h2>
 
-                <!-- Return Date Selection (Always Visible) -->
-                <div class="form-group">
-                    <label for="return-date">Return Date</label>
-                    <input type="date" class="form-control" id="return-date">
-                </div>
+    <!-- Blue Transparent Blurry Container Below the h2 -->
+    <div style="position: absolute;
+     top: 65%; /* Positioned below the h2 */
+     left: 2%; /* Align container to the left like the h2 */
+     width: 40%; /* Keep the previous width */
+     height: 20%; /* Adjust height to fit the content */
+     background-color: #87CEEB; /* Light sky blue color */
+     backdrop-filter: blur(5px); /* Apply the blur effect */
+     border-radius: 10px; /* Optional: rounded corners */
+     padding: 20px;
+     display: flex;
+     justify-content: space-between;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow to blue container */">
 
-                <!-- Departure Airport Dropdown -->
-                <div class="form-group">
-                    <label for="departure-airport">
-                        <i class="fas fa-plane-departure"></i> Departure Airport
-                    </label>
-                    <select class="form-control" id="departure-airport"></select>
-                </div>
-
-                <!-- Arrival Airport Dropdown -->
-                <div class="form-group">
-                    <label for="arrival-airport">
-                        <i class="fas fa-plane-arrival"></i> Arrival Airport
-                    </label>
-                    <select class="form-control" id="arrival-airport"></select>
-                </div>
-
-                <!-- Adult, Children, and Infant Dropdowns -->
-                <div class="form-group row">
-                    <!-- Adult Dropdown -->
-                    <div class="col-md-4">
-                        <label for="adult">Adult</label>
-                        <select class="form-control" id="adult">
-                            <!-- Options from 1 to 15 -->
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                            <option value="13">13</option>
-                            <option value="14">14</option>
-                            <option value="15">15</option>
-                        </select>
-                    </div>
-
-                    <!-- Children Dropdown -->
-                    <div class="col-md-4">
-                        <label for="children">Children</label>
-                        <select class="form-control" id="children">
-                            <!-- Options from 1 to 8 -->
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                        </select>
-                    </div>
-
-                    <!-- Infant Dropdown -->
-                    <div class="col-md-4">
-                        <label for="infant">Infant</label>
-                        <select class="form-control" id="infant">
-                            <!-- Options from 1 to 4 -->
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
-                    </div>
-                </div>
-
-                <!-- Let's Go Button -->
-                <div class="form-group text-center mt-4">
-                    <button class="btn btn-lg" style="background-color: #4682B4; color: white; font-size: 19px; font-weight: bold; padding: 15px 30px; border: none; border-radius: 6px;">
-                        Let's Go
-                    </button>
-                </div>
-
-                <script>
-                    // List of FlySafair destinations
-                    const flySafairDestinations = [
-                        { code: 'CPT', name: 'Cape Town International Airport' },
-                        { code: 'DUR', name: 'King Shaka International Airport (Durban)' },
-                        { code: 'ELS', name: 'King Phalo Airport (East London)' },
-                        { code: 'GRJ', name: 'George Airport' },
-                        { code: 'JNB', name: 'O. R. Tambo International Airport (Johannesburg)' },
-                        { code: 'BFN', name: 'Bram Fischer International Airport (Bloemfontein)' },
-                        { code: 'MQP', name: 'Kruger Mpumalanga International Airport (Mbombela)' },
-                        { code: 'PLZ', name: 'Chief Dawid Stuurman International Airport (Gqeberha)' },
-                        { code: 'HRE', name: 'Robert Gabriel Mugabe International Airport (Harare)' },
-                        { code: 'VFA', name: 'Victoria Falls Airport' },
-                        { code: 'ZNZ', name: 'Abeid Amani Karume International Airport (Zanzibar)' },
-                        { code: 'MRU', name: 'Sir Seewoosagur Ramgoolam International Airport (Mauritius)' },
-                        { code: 'WDH', name: 'Hosea Kutako International Airport (Windhoek)' }
-                    ];
-
-                    // Populate airport dropdowns
-                    const departureAirportSelect = document.getElementById('departure-airport');
-                    const arrivalAirportSelect = document.getElementById('arrival-airport');
-
-                    flySafairDestinations.forEach(destination => {
-                        const option = document.createElement('option');
-                        option.value = destination.code;
-                        option.textContent = destination.name;
-                        departureAirportSelect.appendChild(option.cloneNode(true));
-                        arrivalAirportSelect.appendChild(option);
-                    });
-
-                    // Show/hide return date based on flight type
-                    document.getElementById('flight-type').addEventListener('change', function () {
-                        const returnDate = document.getElementById('return-date');
-                        if (this.value === 'return') {
-                            returnDate.disabled = false;
-                        } else {
-                            returnDate.disabled = true;
-                            returnDate.value = "";
-                        }
-                    });
-
-                    // Ensure return date is same as departure date initially
-                    document.getElementById('departure-date').addEventListener('change', function () {
-                        document.getElementById('return-date').value = this.value;
-                    });
-                </script>
-
-</div>
-
-<script>
-    // List of FlySafair destinations
-    const flySafairDestinations = [
-        { code: 'CPT', name: 'Cape Town International Airport' },
-        { code: 'DUR', name: 'King Shaka International Airport (Durban)' },
-        { code: 'ELS', name: 'King Phalo Airport (East London)' },
-        { code: 'GRJ', name: 'George Airport' },
-        { code: 'JNB', name: 'O. R. Tambo International Airport (Johannesburg)' },
-        { code: 'BFN', name: 'Bram Fischer International Airport (Bloemfontein)' },
-        { code: 'MQP', name: 'Kruger Mpumalanga International Airport (Mbombela)' },
-        { code: 'PLZ', name: 'Chief Dawid Stuurman International Airport (Gqeberha)' },
-        { code: 'HRE', name: 'Robert Gabriel Mugabe International Airport (Harare)' },
-        { code: 'VFA', name: 'Victoria Falls Airport' },
-        { code: 'ZNZ', name: 'Abeid Amani Karume International Airport (Zanzibar)' },
-        { code: 'MRU', name: 'Sir Seewoosagur Ramgoolam International Airport (Mauritius)' },
-        { code: 'WDH', name: 'Hosea Kutako International Airport (Windhoek)' }
-    ];
-
-    // Populate airport dropdowns
-    const departureAirportSelect = document.getElementById('departure-airport');
-    const arrivalAirportSelect = document.getElementById('arrival-airport');
-
-    flySafairDestinations.forEach(destination => {
-        const option = document.createElement('option');
-        option.value = destination.code;
-        option.textContent = destination.name;
-        departureAirportSelect.appendChild(option.cloneNode(true));
-        arrivalAirportSelect.appendChild(option);
-    });
-
-    // Show/hide return date based on flight type
-    document.getElementById('flight-type').addEventListener('change', function () {
-        const returnDate = document.getElementById('return-date');
-        if (this.value === 'return') {
-            returnDate.disabled = false;
-        } else {
-            returnDate.disabled = true;
-            returnDate.value = "";
-        }
-    });
-
-    // Ensure return date is same as departure date initially
-    document.getElementById('departure-date').addEventListener('change', function () {
-        document.getElementById('return-date').value = this.value;
-    });
-</script>
-
+        <!-- Left Side: Departure Airport -->
+        <div style="width: 45%; padding-right: 10px;">
+            <div style="display: flex; align-items: center; margin-top: 5px;">
+                <!-- Departure Icon -->
+                <i class="fas fa-plane-departure" style="color: black; margin-right: 8px;"></i>
+                <!-- Departure Label -->
+                <label for="departure" style="color: black; font-weight: bold;">Departure Airport</label>
             </div>
-
-            <script>
-                // List of FlySafair destinations
-                const flySafairDestinations = [
-                    { code: 'CPT', name: 'Cape Town International Airport' },
-                    { code: 'DUR', name: 'King Shaka International Airport (Durban)' },
-                    { code: 'ELS', name: 'King Phalo Airport (East London)' },
-                    { code: 'GRJ', name: 'George Airport' },
-                    { code: 'JNB', name: 'O. R. Tambo International Airport (Johannesburg)' },
-                    { code: 'BFN', name: 'Bram Fischer International Airport (Bloemfontein)' },
-                    { code: 'MQP', name: 'Kruger Mpumalanga International Airport (Mbombela)' },
-                    { code: 'PLZ', name: 'Chief Dawid Stuurman International Airport (Gqeberha)' },
-                    { code: 'HRE', name: 'Robert Gabriel Mugabe International Airport (Harare)' },
-                    { code: 'VFA', name: 'Victoria Falls Airport' },
-                    { code: 'ZNZ', name: 'Abeid Amani Karume International Airport (Zanzibar)' },
-                    { code: 'MRU', name: 'Sir Seewoosagur Ramgoolam International Airport (Mauritius)' },
-                    { code: 'WDH', name: 'Hosea Kutako International Airport (Windhoek)' }
-                ];
-
-                // Populate airport dropdowns
-                const departureAirportSelect = document.getElementById('departure-airport');
-                const arrivalAirportSelect = document.getElementById('arrival-airport');
-
-                flySafairDestinations.forEach(destination => {
-                    const option = document.createElement('option');
-                    option.value = destination.code;
-                    option.textContent = destination.name;
-                    departureAirportSelect.appendChild(option.cloneNode(true));
-                    arrivalAirportSelect.appendChild(option);
-                });
-
-                // Show/hide return date based on flight type
-                document.getElementById('flight-type').addEventListener('change', function () {
-                    const returnDate = document.getElementById('return-date');
-                    if (this.value === 'return') {
-                        returnDate.disabled = false;
-                    } else {
-                        returnDate.disabled = true;
-                        returnDate.value = "";
-                    }
-                });
-
-                // Ensure return date is same as departure date initially
-                document.getElementById('departure-date').addEventListener('change', function () {
-                    document.getElementById('return-date').value = this.value;
-                });
-            </script>
-
-            <!-- Booking Tab -->
-            <div class="tab-pane fade" id="booking" role="tabpanel" aria-labelledby="booking-tab">
-                <div class="mb-3">
-                    <label for="flightNumber" class="form-label" style="font-weight: normal;">Flight Number</label>
-                    <input type="text" class="form-control" id="flightNumber" placeholder="Enter Flight Number">
-                </div>
-
-                <div class="mb-3">
-                    <label for="fullName" class="form-label" style="font-weight: normal;">Fullname</label>
-                    <input type="text" class="form-control" id="fullName" placeholder="Enter Full Name">
-                </div>
-
-                <button class="btn btn-primary" style="background-color: #4682B4; border-color:#4682B4;">Manage</button>
-                <button class="btn btn-primary" style="background-color:#4682B4; border-color: #4682B4;">Check in</button>
-            </div>
-
+            <select id="departure" style="width: 100%; padding: 12px; font-size: 1rem; margin-top: 5px; height: 50px; border-radius: 5px;">
+                <option value="jnb">O. R. Tambo International Airport (JNB) - Johannesburg</option>
+                <option value="cpt">Cape Town International Airport (CPT) - Cape Town</option>
+                <option value="dur">King Shaka International Airport (DUR) - Durban</option>
+                <option value="plz">Port Elizabeth International Airport (PLZ) - Port Elizabeth</option>
+                <option value="grj">George Airport (GRJ) - George</option>
+                <option value="els">East London Airport (ELS) - East London</option>
+                <option value="znz">Zanzibar Abeid Amani Karume International Airport (ZNZ) - Zanzibar</option>
+                <option value="mru">Mauritius Sir Seewoosagur Ramgoolam International Airport (MRU) - Mauritius</option>
+            </select>
         </div>
+
+        <!-- Right Side: Arrival Airport -->
+        <div style="width: 45%; padding-left: 10px;">
+            <div style="display: flex; align-items: center; margin-top: 5px;">
+                <!-- Arrival Icon -->
+                <i class="fas fa-plane-arrival" style="color: black; margin-right: 8px;"></i>
+                <!-- Arrival Label -->
+                <label for="arrival" style="color: black; font-weight: bold;">Arrival Airport</label>
+            </div>
+            <select id="arrival" style="width: 100%; padding: 12px; font-size: 1rem; margin-top: 5px; height: 50px; border-radius: 5px;">
+                <option value="jnb">O. R. Tambo International Airport (JNB) - Johannesburg</option>
+                <option value="cpt">Cape Town International Airport (CPT) - Cape Town</option>
+                <option value="dur">King Shaka International Airport (DUR) - Durban</option>
+                <option value="plz">Port Elizabeth International Airport (PLZ) - Port Elizabeth</option>
+                <option value="grj">George Airport (GRJ) - George</option>
+                <option value="els">East London Airport (ELS) - East London</option>
+                <option value="znz">Zanzibar Abeid Amani Karume International Airport (ZNZ) - Zanzibar</option>
+                <option value="mru">Mauritius Sir Seewoosagur Ramgoolam International Airport (MRU) - Mauritius</option>
+            </select>
+        </div>
+
+    </div>
+
+    <!-- Light Grey Container Below the Blue One -->
+    <div style="position: absolute;
+    top: 90%; /* Positioned below the blue container */
+    left: 2%;
+    width: 80%; /* Increased width to make everything fit in a straight line */
+    height: 15%; /* Keep the height to accommodate the elements */
+    background-color: #D3D3D3; /* Light grey color */
+    border-radius: 10px;
+    padding: 20px; /* Adjusted padding for better spacing */
+    display: flex; /* Align elements in a row */
+    justify-content: space-between; /* Distribute space between elements */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow to grey container */
+    gap: 20px; /* Add some space between elements */
+">
+
+        <!-- Departing Label and Date Picker -->
+        <div style="flex: 1; text-align: center;">
+            <label for="departing" style="font-weight: bold;">Departing</label>
+            <input type="date" id="departing" style="width: 100%; padding: 5px; border-radius: 5px;">
+        </div>
+
+        <!-- Returning Label and Date Picker -->
+        <div style="flex: 1; text-align: center;">
+            <label for="returning" style="font-weight: bold;">Returning</label>
+            <input type="date" id="returning" style="width: 100%; padding: 5px; border-radius: 5px;">
+        </div>
+
+        <!-- Adults (18+) Label and Dropdown -->
+        <div style="flex: 1; text-align: center;">
+            <label for="adults" style="font-weight: bold;">Adults (18+)</label>
+            <select id="adults" style="width: 100%; padding: 5px; border-radius: 5px;">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+            </select>
+        </div>
+
+        <!-- Children (0-17) Label and Dropdown -->
+        <div style="flex: 1; text-align: center;">
+            <label for="children" style="font-weight: bold;">Children (0-17)</label>
+            <select id="children" style="width: 100%; padding: 5px; border-radius: 5px;">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+            </select>
+        </div>
+
+        
+
+
     </div>
 
 
-<!-- Three Darker Blue Containers Below -->
-<div class="container mt-5">
-    <div class="row">
-        <!-- First Container -->
-        <div class="col-md-4 mb-4">
-            <div class="container p-5" style="background-color: #4682B4; color: white; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); height: 200px;">
-                <h4>Container 1</h4>
-                <p>Content for the first container.</p>
-            </div>
-        </div>
-        <!-- Second Container -->
-        <div class="col-md-4 mb-4">
-            <div class="container p-5" style="background-color: #4682B4; color: white; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); height: 200px;">
-                <h4>Container 2</h4>
-                <p>Content for the second container.</p>
-            </div>
-        </div>
-        <!-- Third Container -->
-        <div class="col-md-4 mb-4">
-            <div class="container p-5" style="background-color: #4682B4; color: white; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); height: 200px;">
-                <h4>Container 3</h4>
-                <p>Content for the third container.</p>
-            </div>
-        </div>
-    </div>
 </div>
 
 <!-- Bootstrap JS (ensure this is included) -->

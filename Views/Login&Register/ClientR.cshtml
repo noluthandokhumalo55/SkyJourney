@@ -1,0 +1,66 @@
+﻿@model SKY_Journey.Models.ClientRegistrationModel
+
+@{
+    ViewData["Title"] = "Client Registration";
+}
+
+<!-- Include Font Awesome for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<!-- Registration Form -->
+<div class="container p-4 shadow rounded bg-white" style="max-width: 400px; margin: auto;">
+    <h2 class="text-center mb-4">Client Registration</h2>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+    <form asp-action="Register" method="post" class="form-container">
+        <!-- Full Name Input Field -->
+        <div class="mb-3">
+            <label for="fullname" class="form-label">Full Name</label>
+            <div class="input-group">
+                <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
+                <input type="text" class="form-control" id="fullname" name="FullName" placeholder="Enter full name" value="@Model?.FullName" required>
+            </div>
+        </div>
+
+        <!-- Email Input Field -->
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <div class="input-group">
+                <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
+                <input type="email" class="form-control" id="email" name="Email" placeholder="Enter email" value="@Model?.Email" required>
+            </div>
+        </div>
+
+        <!-- Password Input Field -->
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <div class="input-group">
+                <span class="input-group-text"><i class="fa-solid fa-lock"></i></span>
+                <input type="password" class="form-control" id="password" name="Password" placeholder="Enter password" required>
+            </div>
+        </div>
+
+        <!-- Confirm Password Input Field -->
+        <div class="mb-3">
+            <label for="confirm-password" class="form-label">Confirm Password</label>
+            <div class="input-group">
+                <span class="input-group-text"><i class="fa-solid fa-lock"></i></span>
+                <input type="password" class="form-control" id="confirm-password" name="ConfirmPassword" placeholder="Confirm password" required>
+            </div>
+        </div>
+
+        <!-- Already Have an Account Link -->
+        <div class="text-center mt-3">
+            <a href="@Url.Action("Index", "LoginRegisterController")" class="text-muted">Already have an account? Login</a>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary mt-3 w-100">Register</button>
+    </form>
+</div>
