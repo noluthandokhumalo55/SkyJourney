@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SKY_Journey.Models;  // Correct namespace for the User model
+using SKY_Journey.Models;
 
-namespace SKY_Journey.Data
+public class SkyJourneyDbContext : DbContext
 {
-    public class SkyJourneyDbContext : DbContext  // Renamed class to SkyJourneyDbContext
+    public SkyJourneyDbContext(DbContextOptions<SkyJourneyDbContext> options)
+        : base(options)
     {
-        public SkyJourneyDbContext(DbContextOptions<SkyJourneyDbContext> options) : base(options) { }
-
-        public DbSet<User> Users { get; set; }  // Changed from Clients to Users
     }
+
+    public DbSet<Client> Clients { get; set; }  // This is where the Clients table is mapped
 }

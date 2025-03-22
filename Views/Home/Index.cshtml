@@ -8,8 +8,8 @@
     background-image: url('/images/backs.png');
     background-size: cover;
     background-position: right;
-    height: 90vh;">
-
+    height: 100vh;">
+    <!-- Adjusted height for better spacing -->
     <!-- Main Text Overlay -->
     <h1 style="position: absolute;
         top: 10%;
@@ -32,29 +32,28 @@
         Search for Flights
     </h2>
 
-    <!-- Blue Transparent Blurry Container Below the h2 -->
+    <!-- Merged Container -->
     <div style="position: absolute;
-     top: 65%; /* Positioned below the h2 */
+     top: 70%; /* Moved downward */
      left: 2%; /* Align container to the left like the h2 */
-     width: 40%; /* Keep the previous width */
-     height: 20%; /* Adjust height to fit the content */
-     background-color: #87CEEB; /* Light sky blue color */
+     width: 92%; /* Increased width to fit both sections */
+     height: 40%; /* Adjusted height dynamically */
+     background-color: #87CEEB; /* Light grey color */
      backdrop-filter: blur(5px); /* Apply the blur effect */
      border-radius: 10px; /* Optional: rounded corners */
      padding: 20px;
      display: flex;
+     flex-wrap: wrap;
      justify-content: space-between;
-     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow to blue container */">
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow */">
 
-        <!-- Left Side: Departure Airport -->
-        <div style="width: 45%; padding-right: 10px;">
-            <div style="display: flex; align-items: center; margin-top: 5px;">
-                <!-- Departure Icon -->
+        <!-- Left Side: Departure & Arrival Airports -->
+        <div style="width: 48%; padding-right: 10px;">
+            <div style="display: flex; align-items: center; margin-bottom: 5px;">
                 <i class="fas fa-plane-departure" style="color: black; margin-right: 8px;"></i>
-                <!-- Departure Label -->
                 <label for="departure" style="color: black; font-weight: bold;">Departure Airport</label>
             </div>
-            <select id="departure" style="width: 100%; padding: 12px; font-size: 1rem; margin-top: 5px; height: 50px; border-radius: 5px;">
+            <select id="departure" style="width: 100%; padding: 12px; font-size: 1rem; height: 50px; border-radius: 5px;">
                 <option value="jnb">O. R. Tambo International Airport (JNB) - Johannesburg</option>
                 <option value="cpt">Cape Town International Airport (CPT) - Cape Town</option>
                 <option value="dur">King Shaka International Airport (DUR) - Durban</option>
@@ -64,17 +63,12 @@
                 <option value="znz">Zanzibar Abeid Amani Karume International Airport (ZNZ) - Zanzibar</option>
                 <option value="mru">Mauritius Sir Seewoosagur Ramgoolam International Airport (MRU) - Mauritius</option>
             </select>
-        </div>
 
-        <!-- Right Side: Arrival Airport -->
-        <div style="width: 45%; padding-left: 10px;">
-            <div style="display: flex; align-items: center; margin-top: 5px;">
-                <!-- Arrival Icon -->
+            <div style="display: flex; align-items: center; margin-top: 15px;">
                 <i class="fas fa-plane-arrival" style="color: black; margin-right: 8px;"></i>
-                <!-- Arrival Label -->
                 <label for="arrival" style="color: black; font-weight: bold;">Arrival Airport</label>
             </div>
-            <select id="arrival" style="width: 100%; padding: 12px; font-size: 1rem; margin-top: 5px; height: 50px; border-radius: 5px;">
+            <select id="arrival" style="width: 100%; padding: 12px; font-size: 1rem; height: 50px; border-radius: 5px;">
                 <option value="jnb">O. R. Tambo International Airport (JNB) - Johannesburg</option>
                 <option value="cpt">Cape Town International Airport (CPT) - Cape Town</option>
                 <option value="dur">King Shaka International Airport (DUR) - Durban</option>
@@ -86,79 +80,97 @@
             </select>
         </div>
 
+        <!-- Right Side: Flight Type, Date Pickers & Passenger Info -->
+        <div style="width: 48%; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px;">
+            <div style="width: 100%; text-align: center;">
+                <label for="flightType" style="font-weight: bold;">Flight Type</label>
+                <select id="flightType" style="width: 100%; padding: 5px; border-radius: 5px;">
+                    <option value="oneway">One Way</option>
+                    <option value="return">Return</option>
+                </select>
+            </div>
+            <div style="width: 48%; text-align: center;">
+                <label for="departing" style="font-weight: bold;">Departing</label>
+                <input type="date" id="departing" style="width: 100%; padding: 5px; border-radius: 5px;">
+            </div>
+            <div style="width: 48%; text-align: center;">
+                <label for="returning" style="font-weight: bold;">Returning</label>
+                <input type="date" id="returning" style="width: 100%; padding: 5px; border-radius: 5px;">
+            </div>
+            <div style="width: 48%; text-align: center;">
+                <label for="adults" style="font-weight: bold;">Adults (18+)</label>
+                <select id="adults" style="width: 100%; padding: 5px; border-radius: 5px;">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select>
+            </div>
+            <div style="width: 48%; text-align: center;">
+                <label for="children" style="font-weight: bold;">Children (0-17)</label>
+                <select id="children" style="width: 100%; padding: 5px; border-radius: 5px;">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+        </div>
     </div>
+</div>
 
-    <!-- Light Grey Container Below the Blue One -->
-    <div style="position: absolute;
-    top: 90%; /* Positioned below the blue container */
-    left: 2%;
-    width: 80%; /* Increased width to make everything fit in a straight line */
-    height: 15%; /* Keep the height to accommodate the elements */
-    background-color: #D3D3D3; /* Light grey color */
-    border-radius: 10px;
-    padding: 20px; /* Adjusted padding for better spacing */
-    display: flex; /* Align elements in a row */
-    justify-content: space-between; /* Distribute space between elements */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow to grey container */
-    gap: 20px; /* Add some space between elements */
-">
+<!-- Show Flights Button below the container -->
+<<div style="text-align: center; margin-top: 80px;">
+    <a href="@Url.Action("Index", "Flights")">
+        <button style="padding: 15px 30px; font-size: 1.2rem; background-color: #87CEEB; color: white; border: none; border-radius: 5px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); cursor: pointer; transition: background-color 0.3s;">
+            Show Flights
+        </button>
+    </a>
+</div>
 
-        <!-- Departing Label and Date Picker -->
-        <div style="flex: 1; text-align: center;">
-            <label for="departing" style="font-weight: bold;">Departing</label>
-            <input type="date" id="departing" style="width: 100%; padding: 5px; border-radius: 5px;">
-        </div>
+<!-- Container wrapper to align the blue containers horizontally -->
+<div class="container-wrapper" style="display: flex; justify-content: space-between; margin-top: 50px;">
 
-        <!-- Returning Label and Date Picker -->
-        <div style="flex: 1; text-align: center;">
-            <label for="returning" style="font-weight: bold;">Returning</label>
-            <input type="date" id="returning" style="width: 100%; padding: 5px; border-radius: 5px;">
-        </div>
-
-        <!-- Adults (18+) Label and Dropdown -->
-        <div style="flex: 1; text-align: center;">
-            <label for="adults" style="font-weight: bold;">Adults (18+)</label>
-            <select id="adults" style="width: 100%; padding: 5px; border-radius: 5px;">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-            </select>
-        </div>
-
-        <!-- Children (0-17) Label and Dropdown -->
-        <div style="flex: 1; text-align: center;">
-            <label for="children" style="font-weight: bold;">Children (0-17)</label>
-            <select id="children" style="width: 100%; padding: 5px; border-radius: 5px;">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-            </select>
-        </div>
-
-        
-
-
+    <!-- Blue Containers with curved corners and color #87CEEB -->
+    <div class="blue-container" style="height: 300px; width: 300px; background-color: #87CEEB; opacity: 0; transform: translateY(50px); transition: opacity 1s, transform 1s; margin-right: 20px; border-radius: 15px;">
+        Container 1
     </div>
-
+    <div class="blue-container" style="height: 300px; width: 300px; background-color: #87CEEB; opacity: 0; transform: translateY(50px); transition: opacity 1s, transform 1s; margin-right: 20px; border-radius: 15px;">
+        Container 2
+    </div>
+    <div class="blue-container" style="height: 300px; width: 300px; background-color: #87CEEB; opacity: 0; transform: translateY(50px); transition: opacity 1s, transform 1s; margin-right: 20px; border-radius: 15px;">
+        Container 3
+    </div>
+    <div class="blue-container" style="height: 300px; width: 300px; background-color: #87CEEB; opacity: 0; transform: translateY(50px); transition: opacity 1s, transform 1s; border-radius: 15px;">
+        Container 4
+    </div>
 
 </div>
 
-<!-- Bootstrap JS (ensure this is included) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Function to handle the scroll event and trigger transitions
+    function handleScroll() {
+        const containers = document.querySelectorAll('.blue-container');
+        containers.forEach(container => {
+            const containerPosition = container.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (containerPosition < windowHeight * 0.8) {
+                container.style.opacity = 1;
+                container.style.transform = 'translateY(0)';
+            }
+        });
+    }
+
+    // Listen for the scroll event
+    window.addEventListener('scroll', handleScroll);
+
+    // Trigger the scroll handler when the page loads, in case the containers are already in view
+    handleScroll();
+</script>
+

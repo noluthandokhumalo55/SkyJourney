@@ -198,3 +198,4 @@ D:\SkyJourney\obj\Debug\net8.0\SKY Journey.pdb
 D:\SkyJourney\obj\Debug\net8.0\SKY Journey.genruntimeconfig.cache
 D:\SkyJourney\obj\Debug\net8.0\ref\SKY Journey.dll
 D:\SkyJourney\bin\Debug\net8.0\BCrypt.Net-Next.dll
+D:\SkyJourney\bin\Debug\net8.0\OpenIddict.EntityFrameworkCore.Models.dll

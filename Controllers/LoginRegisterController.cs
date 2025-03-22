@@ -1,16 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using SKY_Journey.Data;  // Corrected namespace for SkyJourneyDbContext
-using SKY_Journey.Models;  // Corrected namespace for the User model
+using SKY_Journey.Models;  // Corrected namespace for the Client model
 using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
+using BCrypt.Net;  // Add this for BCrypt password comparison
 
 namespace SKY_Journey.Controllers
 {
     public class LoginRegisterController : Controller
     {
-        private readonly SkyJourneyDbContext _context;  // Updated to SkyJourneyDbContext
+        private readonly SkyJourneyDbContext _context;
 
         public LoginRegisterController(SkyJourneyDbContext context)
         {
@@ -33,12 +31,9 @@ namespace SKY_Journey.Controllers
                 return View("~/Views/Login&Register/login.cshtml");
             }
 
-            // Hash the entered password to compare with the stored password hash
-            string hashedPassword = HashPassword(password);
-
-            // Check if the user exists in the Users table
-            var user = _context.Users
-                .Where(u => u.Email == email && u.PasswordHash == hashedPassword)
+            // Check if the user exists in the Clients table
+            var user = _context.Clients
+                .Where(u => u.Email == email)
                 .FirstOrDefault();
 
             if (user == null)
@@ -47,22 +42,15 @@ namespace SKY_Journey.Controllers
                 return View("~/Views/Login&Register/login.cshtml");
             }
 
+            // Verify the hashed password using BCrypt
+            if (!BCrypt.Net.BCrypt.Verify(password, user.PasswordHash))
+            {
+                ViewBag.ErrorMessage = "Incorrect password. Please try again.";
+                return View("~/Views/Login&Register/login.cshtml");
+            }
+
             // Successful login logic (e.g., create session, cookie, etc.)
             return RedirectToAction("Index", "Home");
-        }
-
-        private string HashPassword(string password)
-        {
-            using (SHA256 sha256Hash = SHA256.Create())
-            {
-                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(password));
-                StringBuilder builder = new StringBuilder();
-                foreach (byte byteValue in bytes)
-                {
-                    builder.Append(byteValue.ToString("x2"));
-                }
-                return builder.ToString();
-            }
         }
     }
 }
