@@ -16,6 +16,14 @@ namespace SKY_Journey
             builder.Services.AddDbContext<SkyJourneyDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+            // Add session services
+            builder.Services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(30);  // Session timeout duration
+                options.Cookie.HttpOnly = true;  // Protects the session cookie from client-side JavaScript
+                options.Cookie.IsEssential = true;  // Marks the session cookie as essential
+            });
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -30,6 +38,9 @@ namespace SKY_Journey
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            // Add session middleware here
+            app.UseSession();
 
             app.UseAuthorization();
 

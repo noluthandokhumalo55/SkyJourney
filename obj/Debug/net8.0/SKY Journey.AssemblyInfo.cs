@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SKY Journey")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7f06991309d26d4f2be51738cde7b09c783e2875")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c3b461c3ded3f1f5b43465eb8180b00a6c5d94da")]
 [assembly: System.Reflection.AssemblyProductAttribute("SKY Journey")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SKY Journey")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using SKY_Journey.Models;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Http;  // For session handling
 
 namespace SKY_Journey.Controllers
 {
@@ -15,6 +16,12 @@ namespace SKY_Journey.Controllers
 
         public IActionResult Index()
         {
+            // Check if the user is logged in (using session)
+            if (HttpContext.Session.GetString("UserLoggedIn") == null)
+            {
+                return RedirectToAction("Login", "LoginRegister");
+            }
+
             return View();
         }
 

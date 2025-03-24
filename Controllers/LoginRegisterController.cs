@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SKY_Journey.Data;  // Corrected namespace for SkyJourneyDbContext
 using SKY_Journey.Models;  // Corrected namespace for the Client model
-using System.Linq;
 using BCrypt.Net;  // Add this for BCrypt password comparison
 
 namespace SKY_Journey.Controllers
@@ -49,7 +48,11 @@ namespace SKY_Journey.Controllers
                 return View("~/Views/Login&Register/login.cshtml");
             }
 
-            // Successful login logic (e.g., create session, cookie, etc.)
+            // Successful login logic (e.g., create session)
+            // Set session to indicate the user is logged in
+            HttpContext.Session.SetString("UserLoggedIn", user.Email);
+
+            // Redirect to the home page after login
             return RedirectToAction("Index", "Home");
         }
     }
