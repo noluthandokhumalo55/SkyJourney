@@ -1,0 +1,41 @@
+name: SkyJourney CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    env:
+      SOLUTION_NAME: "SKY Journey.sln"  # Update this if the solution file name is different
+      PROJECT_PATH: "SKY Journey/SKY Journey.csproj"  # Update this if the project file path is different
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x  # Update this to match your .NET version
+
+      - name: Restore Dependencies
+        run: dotnet restore "${{ env.PROJECT_PATH }}"
+
+      - name: Build Solution
+        run: dotnet build "${{ env.PROJECT_PATH }}" --configuration Release --no-restore
+
+      - name: Run Unit Tests
+        run: dotnet test --configuration Release --no-restore --verbosity normal
+
+      - name: Publish Application
+        run: dotnet publish "${{ env.PROJECT_PATH }}" -c Release -o ./publish
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
